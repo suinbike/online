@@ -1,101 +1,36 @@
 <!DOCTYPE html>
-<html dir="ltr" mozdisallowselectionprint>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="google" content="notranslate">
-    <title>PDF.js viewer</title>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>EN Resume</title>
 
-    <!-- This snippet is used in production (included from viewer.html) -->
-    <link rel="resource" type="application/l10n" href="locale/locale.json">
-    <script src="../build/pdf.mjs" type="module"></script>
+  <style>
+    html, body { margin: 0; height: 100%; }
+    iframe { width: 100%; height: 100%; border: none; }
 
-    <link rel="stylesheet" href="viewer.css">
-    <script src="viewer.mjs" type="module"></script>
+    .lang-menu {
+      position: fixed;
+      top: 12px;
+      right: 16px;
+      z-index: 9999;
+      background: rgba(255,255,255,.9);
+      padding: 6px 10px;
+      border-radius: 6px;
+      font-family: sans-serif;
+    }
+    .lang-menu a { text-decoration: none; color: inherit; }
+  </style>
+</head>
 
-    <!-- Language menu styling -->
-    <style>
-      .lang-menu {
-        position: fixed;
-        top: 12px;
-        right: 16px;
-        z-index: 999999999;
-        font-size: 13px;
-        background: rgba(255, 255, 255, 0.85);
-        padding: 4px 8px;
-        border-radius: 6px;
-        backdrop-filter: blur(4px);
-      }
+<body>
 
-      .lang-menu a {
-        color: inherit;
-        text-decoration: none;
-      }
+<div class="lang-menu">
+  <strong>EN</strong> |
+  <a href="/kz/">ҚАЗ</a> |
+  <a href="/rus/">РУС</a>
+</div>
 
-      .lang-menu a:hover {
-        text-decoration: underline;
-      }
-    </style>
-  </head>
+<iframe src="suinbike2024resumeENG.pdf"></iframe>
 
-  <body tabindex="0">
-
-    <!-- Language switcher -->
-  <strong>ENG</strong> |
-<a href="kz.html">ҚАЗ</a> |
-<a href="ru.html?file=suinbike2024resumerus.pdf#view=Fit">
-    <div id="printContainer"></div>
-
-    <span id="viewer-alert" class="visuallyHidden" role="alert"></span>
-
-    <div id="outerContainer">
-
-      <div id="sidebarContainer">
-        <div id="toolbarSidebar" class="toolbarHorizontalGroup">
-          <div id="toolbarSidebarLeft">
-            <div id="sidebarViewButtons" class="toolbarHorizontalGroup toggled" role="radiogroup">
-              <button id="viewThumbnail" class="toolbarButton toggled" type="button"></button>
-              <button id="viewOutline" class="toolbarButton" type="button"></button>
-              <button id="viewAttachments" class="toolbarButton" type="button"></button>
-              <button id="viewLayers" class="toolbarButton" type="button"></button>
-            </div>
-          </div>
-
-          <div id="toolbarSidebarRight"></div>
-        </div>
-
-        <div id="sidebarContent">
-          <div id="thumbnailView"></div>
-          <div id="outlineView" class="hidden"></div>
-          <div id="attachmentsView" class="hidden"></div>
-          <div id="layersView" class="hidden"></div>
-        </div>
-
-        <div id="sidebarResizer"></div>
-      </div>
-
-      <div id="mainContainer">
-        <div id="viewerContainer" tabindex="0">
-          <div id="viewer" class="pdfViewer"></div>
-        </div>
-      </div>
-
-      <div id="dialogContainer">
-
-        <dialog id="printServiceDialog">
-          <div class="row">
-            <span data-l10n-id="pdfjs-print-progress-message"></span>
-          </div>
-          <div class="row">
-            <progress value="0" max="100"></progress>
-          </div>
-        </dialog>
-
-      </div>
-
-    </div>
-
-    <div id="printContainer"></div>
-
-  </body>
+</body>
 </html>
